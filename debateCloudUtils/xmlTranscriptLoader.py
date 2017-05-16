@@ -39,7 +39,7 @@ def loadWordsFromTranscript(filename,stopWords) :
 			color = span['tts:color'] 
 			# actual speech has color == 'white'
 			if color == 'white':
-				text = span.text.encode('utf-8')
+				text = span.text
 				speakerMatch = re.search('\-[A-Z]\.[A-Z a-z\-]+:',text)
 				if speakerMatch: 
 					#clean the speaker's name
@@ -51,7 +51,7 @@ def loadWordsFromTranscript(filename,stopWords) :
 					words = replaceAll(text,removables).replace(currentSpeaker,'').strip()
 					#remove stop words					
 					for word in words.split(" ") :
-						if (word.strip().lower()) not in stopWordsSet :
+						if (word.strip().lower().encode('utf-8')) not in stopWordsSet :
 							wordsBySpeaker[currentSpeaker].append(word)
 
 

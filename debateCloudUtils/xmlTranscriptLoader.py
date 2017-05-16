@@ -3,7 +3,8 @@
 import codecs
 from bs4 import BeautifulSoup
 import re
-from sets import Set
+
+
 
 def replaceAll(original,removables) :
 	"""
@@ -29,7 +30,7 @@ def loadWordsFromTranscript(filename,stopWords) :
 	
 	currentSpeaker = None
 
-	stopWordsSet = Set(stopWords)
+	stopWordsSet = set(stopWords)
 
 	wordsBySpeaker = {}
 	#using codecs.open (https://github.com/amueller/word_cloud/issues/148)

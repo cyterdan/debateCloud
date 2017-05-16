@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from sets import Set
+
 import codecs
 def loadStopWords(filename) :
 	"""
@@ -20,5 +20,5 @@ def loadStopWords(filename) :
 			lines.append(line.strip())
 	
 
-	return Set(lines)
+	return set(lines)
 
